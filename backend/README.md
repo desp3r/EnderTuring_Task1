@@ -179,3 +179,8 @@ Add or update its allowed roles in ACCESS_POLICY.
 Apply grant_access(...) to the endpoint.
 
 Do not add role-specific checks such as current_user.role == UserRole.ADMIN inside route handlers. Keeping authorization rules in ACCESS_POLICY ensures access control remains centralized and allows new roles or permission changes to be introduced without modifying existing route logic.
+
+Run corresponding tests from /backend
+```
+uv run pytest tests/api/deps/test_grant_access_dep.py -o addopts="" -vv
+```
